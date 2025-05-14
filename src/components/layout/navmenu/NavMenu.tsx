@@ -7,7 +7,10 @@ import Link from 'next/link';
 import clsx from 'clsx';
 import * as Tooltip from '@radix-ui/react-tooltip';
 
-import { mainMenu, footerMenu } from '@/data/menu';
+import {
+  mainMenu,
+  footerMenu,
+} from '@/components/layout/navmenu/menuData/menu';
 import { Avatar, AvatarImage } from '@/components/ui/avatar';
 import { useNavMenu } from './useNavMenu';
 import { useAuth } from '@/context/AuthContext';

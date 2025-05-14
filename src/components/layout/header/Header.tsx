@@ -3,7 +3,10 @@
 import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { mainMenu, footerMenu } from '@/data/menu';
+import {
+  mainMenu,
+  footerMenu,
+} from '@/components/layout/navmenu/menuData/menu';
 import { useHeader } from './useHeader';
 import { useAuth } from '@/context/AuthContext';
 import { useRouter } from 'next/navigation';
