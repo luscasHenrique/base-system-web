@@ -1,6 +1,3 @@
-// src/types/models/user.ts
-
-// Tipos possíveis de papel (role) de um usuário
 export enum UserRole {
   Admin = 'admin',
   Editor = 'editor',
@@ -9,23 +6,28 @@ export enum UserRole {
   SuperAdmin = 'superAdmin',
 }
 
-// Interface principal de um usuário
 export interface User {
-  id: number;
-  username: string;
+  id: string;
+  username?: string | null;
   name: string;
   email: string;
-  password: string;
+  password_hash: string;
   phone?: string | null;
   avatar_url?: string | null;
-  role: UserRole; // agora usando o enum
+  role: UserRole;
   is_active: boolean;
-  last_login: string | null;
-  created_at: string | null;
-  updated_at: string | null;
+  last_login_at?: string | null;
+  created_at: string;
+  updated_at?: string | null;
+
+  // extras do banco (opcional incluir na model agora)
+  metadata?: Record<string, unknown> | null;
+  deleted_at?: string | null;
+  auth_provider?: string | null;
+  email_verified?: boolean;
+  verification_token?: string | null;
 }
 
-// Interface da resposta de login, contendo o token e os dados do usuário
 export interface LoginResponse {
   token: string;
   user: User;
